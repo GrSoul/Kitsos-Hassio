@@ -82,7 +82,7 @@
 
 # Lights off on movement
 - id: '1586873827187'
-  alias: Lights on on movement
+  alias: Lights off on movement
   description: 'Turns off the lights if there's no movement.'
   trigger:
   - entity_id: binary_sensor.motion
@@ -186,7 +186,7 @@
 # Toggle lights with a single press on switch
 - id: '1586943102167'
   alias: Toggle lights with switch (single press)
-  description: Toggles a light with single press on switch.
+  description: Toggles a light with a single press on switch.
   trigger:
   - event_data:
       click_type: single
@@ -202,7 +202,7 @@
 # Toggle lights with a double press on switch
 - id: '1586943177970'
   alias: Toggle lights with switch (double press)
-  description: Toggles a light with double press on switch.
+  description: Toggles a light with a double press on switch.
   trigger:
   - event_data:
       click_type: double
