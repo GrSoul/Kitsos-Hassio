@@ -1,0 +1,261 @@
+# Welcome home
+- id: '1582125952963'
+  alias: Welcome home
+  description: 'Says "welcome home" when you connect to your WiFi'
+  trigger: []
+  condition:
+  - condition: state
+    entity_id: device_tracker.my_phone
+    state: home
+  action:
+  - data:
+      language: el
+      message: Welcome home.
+    entity_id: media_player.living_room
+    service: tts.google_translate_say
+
+# It's getting cold
+- id: '1582127910953'
+  alias: It's getting cold
+  description: 'Makes a notification when the room temperature drops under 19 degrees Celcius'
+  trigger:
+  - below: '19.0'
+    entity_id: sensor.temperature
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      message: It's getting cold in here!
+    service: persistent_notification.create
+
+# Lights on at night
+- id: '1581536643795'
+  alias: Lights at night
+  description: Turns on the lights 30 mins before sunset.
+  trigger:
+  - event: sunset
+    offset: -00:30:00
+    platform: sun
+  condition: []
+  action:
+  - entity_id: light.bulb1
+    service: light.turn_on
+  - entity_id: light.bulb2
+    service: light.turn_on
+  - entity_id: light.bulb3
+    service: light.turn_on
+  - data:
+      brightness: 30
+      rgb_color:
+      - 0
+      - 255
+      - 0
+    entity_id: light.night-light
+    service: light.turn_on
+
+# Lights off night-light
+- id: '1582966549545'
+  alias: No night-light on sunrise
+  description: Turns off the night-light on sunrise.
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition: []
+  action:
+  - entity_id: light.night-light
+    service: light.turn_off
+
+# Lights on on movement
+- id: '1586632051924'
+  alias: Lights on on movement
+  description: Turns on the lights on movement
+  trigger:
+  - entity_id: binary_sensor.motion
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.bulb1
+    service: light.turn_on
+
+# Lights off on movement
+- id: '1586873827187'
+  alias: Lights on on movement
+  description: 'Turns off the lights if there's no movement.'
+  trigger:
+  - entity_id: binary_sensor.motion
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.bulb1
+    service: light.turn_off
+
+# Yes movie lights
+- id: '1583431544320'
+  alias: Yes movie lights
+  description: Turns the lights blue when Chromecast is on playing mode. It works only at night.
+  trigger:
+  - entity_id: media_player.tv
+    platform: state
+    to: playing
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
+  - data:
+      brightness: 128
+      rgb_color:
+      - 102
+      - 102
+      - 255
+      transition: 2
+    entity_id: light.bulb1, light.bulb2
+    service: light.turn_on
+
+# No movie lights
+- id: '1583430978463'
+  alias: No movie lights
+  description: Turns the lights yellow when Chromecast stops playing. It works only at night.
+  trigger:
+  - entity_id: media_player.tv
+    from: playing
+    platform: state
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
+  - data:
+      brightness: 255
+      rgb_color:
+      - 255
+      - 183
+      - 121
+    entity_id: light.bulb1, light.bulb2
+    service: light.turn_on
+
+# Normal lights on 90 degrees cube
+- id: '1586788129386'
+  alias: Normal lights on 90 degrees cube
+  description: Turns normal lights on when Xiaomi cube flips 90 degrees.
+  trigger:
+  - event_data:
+      action_type: flip90
+      entity id: binary_sensor.cube_switch
+    event_type: xiaomi_aqara.cube_action
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 255
+      rgb_color:
+      - 255
+      - 183
+      - 121
+    entity_id: light.bulb1, light.bulb2
+    service: light.turn_on
+
+# Movie lights on 180 degrees cube
+- id: '1586874579793'
+  alias: Movie lights on 180 degrees cube
+  description: Turns movie lights on when Xiaomi cube flips 180 degrees.
+  trigger:
+  - event_data:
+      action_type: flip180
+      entity id: binary_sensor.cube_switch
+    event_type: xiaomi_aqara.cube_action
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 128
+      transition: 2
+      rgb_color:
+      - 102
+      - 102
+      - 255
+    entity_id: light.bulb1, light.bulb2
+    service: light.turn_on
+
+# Toggle lights with a single press on switch
+- id: '1586943102167'
+  alias: Toggle lights with switch (single press)
+  description: Toggles a light with single press on switch.
+  trigger:
+  - event_data:
+      click_type: single
+      entity_id: binary_sensor.wall_switch
+    event_type: xiaomi_aqara.click
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.bulb1
+    service: light.toggle
+
+# Toggle lights with a double press on switch
+- id: '1586943177970'
+  alias: Toggle lights with switch (double press)
+  description: Toggles a light with double press on switch.
+  trigger:
+  - event_data:
+      click_type: double
+      entity_id: binary_sensor.wall_switch
+    event_type: xiaomi_aqara.click
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.bulb1, light.bulb2
+    service: light.toggle
+
+# Turn on fan every day
+- id: '1586872913772'
+  alias: Turn on fan every day
+  description: 'Turns on the fan in an exact time'
+  trigger:
+  - at: '15:30:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: fan.xiaomi_fan
+    service: fan.turn_on
+
+# Turn off fan every day
+- id: '1586873236910'
+  alias: Turn off fan every day
+  description: 'Turns off the fan in an exact time'
+  trigger:
+  - at: '16:30:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: fan.ionistis
+    service: fan.turn_off
+
+# Vaccum scheduled cleanup
+- id: '1586950965317'
+  alias: Vaccum scheduled cleanup
+  description: 'Vacuum cleans up every Tuesday and Friday at 10:00'
+  trigger:
+  - at: '10:00:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - data: {}
+    entity_id: vacuum.xiaomi_vacuum
+    service: vacuum.start
+  - data:
+      message: I'm starting the cleanup!
+    service: persistent_notification.create
