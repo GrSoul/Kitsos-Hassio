@@ -1,0 +1,19 @@
+# Lights on at 90 degrees (uses Xiaomi Magic Cube)
+  alias: Lights on at 90 degrees (uses Xiaomi Magic Cube)
+  description: Turns lights on when Xiaomi Magic Cube flips 90 degrees.
+  trigger:
+  - event_data:
+      action_type: flip90
+      entity id: binary_sensor.cube_switch_XXXXX
+    event_type: xiaomi_aqara.cube_action
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 255
+      rgb_color:
+      - 255
+      - 183
+      - 121
+    entity_id: light.XXXXX1, light.XXXXX2
+    service: light.turn_on
