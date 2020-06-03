@@ -1,0 +1,20 @@
+# Movie lights on 180 degrees (uses Xiaomi Magic Cube)
+  alias: Movie lights on 180 degrees cube
+  description: Turns movie lights on when Xiaomi cube flips 180 degrees.
+  trigger:
+  - event_data:
+      action_type: flip180
+      entity id: binary_sensor.cube_switch_XXXXX
+    event_type: xiaomi_aqara.cube_action
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 128
+      transition: 2
+      rgb_color:
+      - 102
+      - 102
+      - 255
+    entity_id: light.XXXXX1, light.XXXXX2
+    service: light.turn_on
