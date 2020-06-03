@@ -1,0 +1,4 @@
+# OASA Telematics - Bus arrival times for exact route & exact stop in Athens
+  - platform: oasa_telematics
+    route_id: 1965
+    stop_id: '090006'
