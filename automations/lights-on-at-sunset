@@ -1,0 +1,23 @@
+# Lights on at sunset
+  alias: Lights at night
+  description: Turns on the lights 30 mins before sunset.
+  trigger:
+  - event: sunset
+    offset: -00:30:00
+    platform: sun
+  condition: []
+  action:
+  - entity_id: light.XXXXX1
+    service: light.turn_on
+  - entity_id: light.XXXXX2
+    service: light.turn_on
+  - entity_id: light.XXXXX3
+    service: light.turn_on
+  - data:
+      brightness: 30
+      rgb_color:
+      - 0
+      - 255
+      - 0
+    entity_id: light.XXXXX4
+    service: light.turn_on
