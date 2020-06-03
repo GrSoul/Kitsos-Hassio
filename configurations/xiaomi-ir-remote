@@ -1,0 +1,6 @@
+# Xiaomi IR Remote integration
+remote:
+  - platform: xiaomi_miio
+    host: 192.168.1.XXX
+    token: XXXXXXXXXXXXXXXXXXX
+    name: IR Remote  
