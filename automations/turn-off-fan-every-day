@@ -1,0 +1,11 @@
+# Turn off fan every day
+  alias: Turn off fan every day
+  description: 'Turns off the fan at 16:30'
+  trigger:
+  - at: '16:30:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: fan.XXXXX
+    service: fan.turn_off
