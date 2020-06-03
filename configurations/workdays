@@ -1,0 +1,6 @@
+# Workday / holidays sensor - Used to schedule vacuum cleanups
+binary_sensor:
+  - platform: workday
+    country: DE
+    workdays: [tue, fri]
+    excludes: [mon, wed, thu, sat, sun]
