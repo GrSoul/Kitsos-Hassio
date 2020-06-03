@@ -1,0 +1,5 @@
+# Xiaomi router - Uses the Xiaomi router as a device tracker
+device_tracker:
+  - platform: xiaomi
+    host: 192.168.1.XXX
+    password: XXXXXXXXXXXXXXXXXXX
