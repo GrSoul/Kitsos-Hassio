@@ -1,0 +1,21 @@
+# Movie lights on
+  alias: Movie lights on
+  description: Dims & turns the lights blue when Chromecast is on playing mode. It works only at night.
+  trigger:
+  - entity_id: media_player.XXXXX
+    platform: state
+    to: playing
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
+  - data:
+      brightness: 128
+      rgb_color:
+      - 102
+      - 102
+      - 255
+      transition: 2
+    entity_id: light.XXXXX1, light.XXXXX2
+    service: light.turn_on
