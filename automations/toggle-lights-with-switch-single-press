@@ -1,0 +1,14 @@
+# Toggle lights with a single press on switch (uses Xiaomi Wall Switch)
+  alias: Toggle lights with a single press on switch
+  description: Toggles a light with a single press on switch.
+  trigger:
+  - event_data:
+      click_type: single
+      entity_id: binary_sensor.wall_switch_XXXXX
+    event_type: xiaomi_aqara.click
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.XXXXX1
+    service: light.toggle
