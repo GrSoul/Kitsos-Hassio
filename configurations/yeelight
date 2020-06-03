@@ -1,0 +1,23 @@
+# Yeelight - Integration of smart light bulbs / strips from Xiaomi Yeelight
+yeelight:
+  devices:
+    192.168.1.XXX:
+      name: Entrance
+      transition: 500
+      save_on_change: true
+    192.168.1.XXX:  
+      name: Living Room 1
+      transition: 500
+      save_on_change: true
+    192.168.1.XXX:
+      name: Bedroom
+      transition: 500
+      save_on_change: true
+    192.168.1.XXX:
+      name: Living Room 2
+      transition: 500
+      save_on_change: true
+    192.168.1.XXX:
+      name: Kitchen
+      transition: 500
+      save_on_change: true
