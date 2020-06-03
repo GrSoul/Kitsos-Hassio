@@ -1,0 +1,13 @@
+# Lights on on movement
+  alias: Lights on on movement
+  description: Turns on the lights on movement
+  trigger:
+  - entity_id: binary_sensor.motion_XXXXX
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.XXXXX
+    service: light.turn_on
