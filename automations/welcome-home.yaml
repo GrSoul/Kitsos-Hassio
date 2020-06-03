@@ -1,4 +1,4 @@
-# Welcome home (must replace: entity_id)
+# Welcome home
   alias: Welcome home
   description: 'Says "welcome home" when you connect to your WiFi'
   trigger: []
