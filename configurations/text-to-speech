@@ -1,0 +1,4 @@
+# Text to speech - Enables Google TTS for voice responds
+tts:
+  - platform: google_translate
+    language: 'en'
