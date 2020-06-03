@@ -1,0 +1,15 @@
+# Toggle lights with a double press on switch (uses Xiaomi Wall Switch)
+- id: '1586943177970'
+  alias: Toggle lights with switch (double press)
+  description: Toggles the lights with a double press on switch.
+  trigger:
+  - event_data:
+      click_type: double
+      entity_id: binary_sensor.wall_switch_XXXXX
+    event_type: xiaomi_aqara.click
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.XXXXX1, light.XXXXX2
+    service: light.toggle
