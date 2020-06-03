@@ -13,36 +13,35 @@ Just copy & paste in the right file of your installation
 
 ## Table of contents (configurations)
 
-(NOT READY YET)
+- Text-to-speech: Enables Google TTS for voice responds.
+- OASA Telematics: Bus arrival times for exact route & exact stop in Athens. 
+- Yeelight: Integration of smart light bulbs / strips from Xiaomi Yeelight.
+- Xiaomi Aqara Gateway integration.
+- Xiaomi IR Remote integration.
+- Xiaomi PM2.5 fan integration.
+- Xiaomi Robot Vacuum integration.
+- Xiaomi router: Device tracker integration (home / away).
+- Workdays: workday / holiday sensor used to schedule vacuum cleanups.
 
-- Text-to-speech: Used to make Home Assistant talk.
-- Date & Time: Used to configure automations based on date & time.
-- OASA: A telematics platform for Athens' bus schedule. It is used to track my favourite route.
-- Yeelight: A smart light solution by Xiaomi.
-- Xiaomi Gateway: A smart home solution with extra sensors (temp, humid, door, motion, light).
-- Xiaomi router: It is used to track devices locations (home or away).
-- Xiaomi appliances: Smart home devices like a fan, a vacuum cleaner and an IR remote controller.
-- Vacuum workdays / holidays: It is an identifier of working days and holidays. It is used as a scheduler for the vacuum.
+MORE COMING SOON...
 
 ## Table of contents (automations)
 
-(NOT READY YET)
-
-- Welcome home: Says "welcome home" when you connect to your WiFi. It uses the router to track a smartphone. (Tracking sendor & TTS)
-- It's getting cold: Shows a notification when the room temperature drops under 19 degrees Celcius. (Τemperature sensor)
-- Lights on at night: Turns on the lights 30 mins before sunset. (Sun sensor)
-- Lights off night-light: Turns off the night-light on sunrise. (Sun sensor)
-- Lights on on movement: Turns on the lights on movement. (Motion sensor)
-- Lights off on movement: Turns off the lights if there's no movement. (Motion sensor)
-- Yes movie lights: Turns the lights blue when Chromecast is on playing mode after sunset. (Sun sensor & media player condition)
-- No movie lights: Turns the lights yellow when Chromecast stops playing after sunset. (Sun sensor & media player condition)
-- Normal lights on 90 degrees cube: Turns normal lights on when Xiaomi cube flips 90 degrees. (Xiaomi magic cube)
-- Movie lights on 180 degrees cube: Turns movie lights on when Xiaomi cube flips 180 degrees. (Xiaomi magic cube)
-- Toggle lights with switch (single press): Toggles a light with single press on switch. (Xiaomi wall/button switch)
-- Toggle lights with switch (double press): Toggles a light with double press on switch. (Xiaomi wall/button switch)
-- Turn on fan every day: Turns on the fan in an exact time. (Time condition)
-- Turn off fan every day: Turns off the fan in an exact time. (Time condition)
-- Vaccum scheduled cleanup: Vacuum cleans up every Tuesday and Friday at 10:00 and notifies about it. (Time condition & workday sensor)
+- Getting cold: Sends a notification when the room temperature drops under 19 degrees Celcius.
+- Lights on on movement: Turns on the lights on movement detection.
+- Lights off if no movement: Turns off the lights if there's no movement detection.
+- Lights on at 90 degrees: Turns lights on when Xiaomi Magic Cube flips 90 degrees.
+- Movie light on at 180 degrees: Turns movie lights on when Xiaomi Magic Cube flips 180 degrees.
+- Lights on at sunset: Turns on the lights 30 mins before sunset.
+- Night-light off: Turns off the night-light on sunrise.
+- Movie lights on: Dims & turns the lights blue when Chromecast is on playing mode. It works only at night.
+- Movie lights off: Turns the lights yellow when Chromecast stops playing. It works only at night.
+- Toggle lights with double press: Toggles the lights with a double press on Xiaomi Wall Switch.
+- Toggle lights with single press: Toggles the lights with a single press on Xiaomi Wall Switch.
+- Turn on fan everyday: Turns on the fan at 15:30.
+- Turn off fan everyday: Turns off the fan at 16:30.
+- Vacuum cleanup schedule: Xiaomi Robot Vacuum cleans up every Tuesday and Friday at 10:00 & sends notification.
+- Welcome Home: Says "welcome home" when you connect to your WiFi.
 
 ## Table of contents (lovelace)
 
