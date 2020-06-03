@@ -1,0 +1,12 @@
+# It's getting cold
+  alias: It's getting cold
+  description: 'Sends a notification when the room temperature drops under 19 degrees Celcius'
+  trigger:
+  - below: '19.0'
+    entity_id: sensor.temperature_XXXXX
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      message: It's getting cold in here!
+    service: persistent_notification.create
