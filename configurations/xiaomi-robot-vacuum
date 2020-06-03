@@ -1,0 +1,6 @@
+# Xiaomi Robot Vacuum integration
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.1.XXX
+    token: XXXXXXXXXXXXXXXXXXXX
+    name: Vacuum
