@@ -1,0 +1,13 @@
+# Lights off if no movement
+  alias: Lights off if no movement
+  description: 'Turns off the lights if there's no movement.'
+  trigger:
+  - entity_id: binary_sensor.motion_XXXXX
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.XXXXX
+    service: light.turn_off
