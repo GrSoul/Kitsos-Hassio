@@ -1,0 +1,11 @@
+# Turn on fan every day (uses Xiaomi PM2.5 fan)
+  alias: Turn on fan every day
+  description: 'Turns on the fan at 15:30'
+  trigger:
+  - at: '15:30:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: fan.XXXXX
+    service: fan.turn_on
