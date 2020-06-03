@@ -1,0 +1,10 @@
+# Night-light off on sunrise
+  alias: Turn off night-light on sunrise
+  description: Turns off the night-light on sunrise.
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition: []
+  action:
+  - entity_id: light.XXXXX
+    service: light.turn_off
