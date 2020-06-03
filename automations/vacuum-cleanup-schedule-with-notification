@@ -1,0 +1,17 @@
+# Vaccum scheduled cleanup with notification (uses Xiaomi Robot Vacuum & Workday sensor integration)
+  alias: Vaccum scheduled cleanup with notification
+  description: 'Vacuum cleans up every Tuesday and Friday at 10:00 & sends notification'
+  trigger:
+  - at: '10:00:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor_XXXXX
+    state: 'on'
+  action:
+  - data: {}
+    entity_id: vacuum.xiaomi_vacuum_XXXXX
+    service: vacuum.start
+  - data:
+      message: I'm starting the cleanup!
+    service: persistent_notification.create
