@@ -1,0 +1,14 @@
+# Welcome home (must replace: entity_id)
+  alias: Welcome home
+  description: 'Says "welcome home" when you connect to your WiFi'
+  trigger: []
+  condition:
+  - condition: state
+    entity_id: device_tracker.XXXXX
+    state: home
+  action:
+  - data:
+      language: en
+      message: Welcome home
+    entity_id: media_player.XXXXX
+    service: tts.google_translate_say
