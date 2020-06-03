@@ -1,0 +1,6 @@
+# Xiaomi PM2.5 fan - Integration for Xiaomi's PM-2.5 fan
+fan:
+  - platform: xiaomi_miio
+    host: 192.168.1.XXX
+    token: XXXXXXXXXXXXXXXXXX
+    name: Fan
