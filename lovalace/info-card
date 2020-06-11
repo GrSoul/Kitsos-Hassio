@@ -1,0 +1,4 @@
+# A basic info card that tells the user if the door is closed and the alarm armed
+Hi {{user}}!  
+The door is {% if is_state('binary_sensor.door_XXXXX', 'on') %} **open** {% else %} **closed** {% endif %}  
+and the alarm is {% if is_state('alarm_control_panel.xiaomi_gateway_XXXXX', 'armed_away') %}  **armed**{% else %} **unarmed**{% endif %}.
