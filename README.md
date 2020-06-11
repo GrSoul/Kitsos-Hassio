@@ -45,4 +45,5 @@ MORE COMING SOON...
 
 ## Table of contents (lovelace)
 
-(NOT READY YET)
+- **Info card:**  A basic info card that tells the user if the door is closed and the alarm armed.
+- **Radio media player:** A media player entity with web radio station support. (It uses the "mini media player" from HACS.)
