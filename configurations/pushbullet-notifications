@@ -1,0 +1,7 @@
+# Pushbullet notifications integration
+notify:
+  - name: HomeAssistant
+    platform: pushbullet
+    api_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    monitored_conditions:
+      - body
