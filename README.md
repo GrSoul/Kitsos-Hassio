@@ -1,15 +1,14 @@
 # Kitsos | Home Assistant 
 
-This is my setup for the Home Assistant (configurations, automations & lovelace cards).
-You can use any of them in your installation, just make sure to change any IP addresses, tokens, MAC addresses etc. with your own.
+This is my setup for the Home Assistant (configurations, automations & lovelace cards). 
 
-### How to use it
+## How to use it
 
 - In the **configurations** folder you'll find entries for your **configuration.yaml**
 - In the **automations** folder you'll find entries for your **automations.yaml**
 - In the **lovelace** folder you'll find entries for your **Lovelace UI**
 
-Just copy & paste in the right file of your installation
+You can use any of them in your installation, just copy & paste each segment in the correct file. Make sure to change any IP addresses, tokens, MAC addresses etc. with your own. Bits that need to be changed are marked with "XXXXXX".
 
 ## Table of contents (configurations)
 
@@ -22,8 +21,8 @@ Just copy & paste in the right file of your installation
 - **Xiaomi Robot Vacuum** integration.
 - **Xiaomi router:** Device tracker integration (home / away).
 - **Workdays:** workday / holiday sensor used to schedule vacuum cleanups.
-
-MORE COMING SOON...
+- **Pushbullet notifications** integration.
+- **Nmap tracker:** Used to determine if a person (device) is at home or not.
 
 ## Table of contents (automations)
 
