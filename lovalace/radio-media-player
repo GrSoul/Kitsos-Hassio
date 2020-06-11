@@ -1,0 +1,34 @@
+# A media player entity with web radio station support. It uses the "mini media player" from HACS.
+artwork: cover
+columns: 3
+entity: media_player.XXXXX
+hide:
+  volume: false
+shortcuts:
+  buttons:
+    - id: 'http://radio.1055rock.gr:30000/1055'
+      name: 1055 Rock
+      type: playlist
+    - id: 'http://s10.voscast.com:9942/;'
+      name: Velvet 96.8
+      type: playlist
+    - id: 'http://eu9.fastcast4u.com/proxy/nicper00?mp=/1'
+      name: Fly 104
+      type: playlist
+    - id: 'http://eu9.fastcast4u.com/proxy/nicperet?mp=/1'
+      name: Imagine 89.7
+      type: playlist
+    - id: 'http://eco.onestreaming.com:8039/;'
+      name: Plus 102.6
+      type: playlist
+    - id: 'http://62.212.82.197:8000/;'
+      name: 89 Rainbow
+      type: playlist
+    - id: 'http://eu10.fastcast4u.com:5870/;?type=http&nocache=9971'
+      name: Metropolis 95.5
+      type: playlist
+    - id: 'http://eco.onestreaming.com:8081/;'
+      name: Libero 107.4
+      type: playlist
+source: icon
+type: 'custom:mini-media-player'
